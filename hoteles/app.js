@@ -10,17 +10,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(methodOverride());
 
-/*var hotelModels = require('./modelos/hotelModelo')(app, mongoose);
-var hotelCtrl = require('./controladores/hotelControlador');*/
-
-
 // API routes
 var routes = require('./routes/hotelRoutes');
 routes(app);
 
-
 // Connection to DB
-mongoose.connect('mongodb://localhost/dbsHotel2', function (err, res) {
+mongoose.connect('mongodb://localhost/dbsHotel', function (err, res) {
   if (err) {
     console.log('ERROR: connecting to Database. ' + err);
   }

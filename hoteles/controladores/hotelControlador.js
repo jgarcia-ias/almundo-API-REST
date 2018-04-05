@@ -23,14 +23,11 @@ exports.findById = function (req, res) {
 //POST - Insert a new Hotel in the DB
 exports.addHotel = function (req, res) {
 	console.log('POST /addHotel');
-	//console.log(req.body);
-
 	var hotel = new Hotel({
 		name: req.body.name,
 		stars: req.body.stars,
 		price: req.body.price,
 		images: req.body.images,
-		//amenities: req.body.amenities
 	});
 	hotel.save(function (err, hotel) {
 		if (err) res.send(err);
